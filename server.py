@@ -7,7 +7,6 @@ if not os.path.exists("env_variables.txt"):
 
 import customtkinter
 from PIL import Image, ImageTk
-import os
 import time
 import threading
 from datetime import datetime
