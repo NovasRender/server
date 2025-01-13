@@ -242,9 +242,9 @@ def load_env_variables():
         if "serverpass" in os.environ:
             print("Environment Variable Successfully Loaded")
         else:
-            page = "New Password"
+            print("No Password Found")
     else:
-        page = "New Password"
+        print("No Password Found")
 
 def save_env_variable(key, value):
     os.environ[key] = value
@@ -344,9 +344,11 @@ def login():
     else:
         shake_widget(loginbutton)
 
-# Define other functions as needed
 
 if page == "Login":
+
+    print("LOGIN PAGE PROMPTED.")
+
     frame = customtkinter.CTkFrame(master=root)
     frame.pack(pady=20, padx=20, fill="both", expand=True)
 
@@ -359,4 +361,10 @@ if page == "Login":
     loginbutton = customtkinter.CTkButton(master=frame, text="Sign In", command=lambda: [login(), play_button_click_sound()])
     loginbutton.pack(pady=10, padx=10)
 
-root.mainloop()
+    frame2 = customtkinter.CTkFrame(master=root, height = 2.5)
+    frame2.pack(pady=20, padx=20, fill="x", expand=True)
+
+    label = customtkinter.CTkLabel(master=frame2, text=f"Hint: {os.getenv("pass_hint")}", font=("Roboto", 20))
+    label.pack(pady=50, padx=10)
+
+root.mainloop() 
