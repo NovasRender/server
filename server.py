@@ -1,3 +1,10 @@
+import os
+
+if not os.path.exists("env_variables.txt"):
+    print("[ERROR]: Setup.py has not been ran, run that then try again.")
+    input("Press any key to exit...")
+    exit()
+
 import customtkinter
 from PIL import Image, ImageTk
 import os
